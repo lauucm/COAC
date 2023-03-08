@@ -58,6 +58,12 @@ public class Romancero extends Agrupacion implements Callejera {
 		return "Amo a escucha el romancero " + super.getNombre();
 	}
 
+	/**
+	 * método para devolver una cadena de texto de los objetos de la clase romancero
+	 * y sus respectivas clases madres
+	 * 
+	 * @return objetos de esta clase y sus madres
+	 */
 	@Override
 	public String toString() {
 		return "Romancero: tematica= " + tematica + super.toString();
