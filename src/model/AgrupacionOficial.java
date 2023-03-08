@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Arrays;
 import java.util.Iterator;
 
 /**
@@ -109,18 +110,17 @@ public abstract class AgrupacionOficial extends Agrupacion {
 	 */
 	public abstract String caminitoDelFalla();
 
+	
+
 	/**
-	 * metodo para devolver una caden a de texto de de los objetos de la clase
+	 * metodo para devolver una cadena de texto de de los objetos de la clase
 	 * agrupación oficial y su clase madre
 	 * 
 	 * @return objetos de la agrupación y la agrupación oficial
 	 */
 	@Override
 	public String toString() {
-		return "Puntos= " + getPuntos() + ", caminitoDelFalla= " + caminitoDelFalla() + ", Nombre= " + getNombre()
-				+ ", Autor= " + getAutor() + ", Autor de la musica= " + getAutor_musica() + ", Autor de las letras= "
-				+ getAutor_letras() + ", Disfraz= " + getDisfraz() + ", cantar Presentacion= " + cantarPresentacion()
-				+ ", hacer Tipo= " + hacerTipo();
+		return "AgrupacionOficial: puntos= " + puntos + ", participante= " + Arrays.toString(participante) + super.toString();
 	}
 
 }
