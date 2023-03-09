@@ -71,7 +71,7 @@ public class COAC {
 	 * metodo para inscribir a una agrupación, donde primeramente se comprueba si no
 	 * esta ya incluida
 	 * 
-	 * @param a <i></i>objeto de la agrupación
+	 * @param a <i>objeto de la agrupación</i>
 	 * @return
 	 *         <ul>
 	 *         <li>true: se inscribe la agrupación correctamente</li>
@@ -124,6 +124,17 @@ public class COAC {
 		return deleted;
 	}
 
+	/**
+	 * metodo para inscribir a un integrante, donde primeramente se comprueba si no
+	 * esta ya incluida
+	 * 
+	 * @param a <i>objeto del integrante</i>
+	 * @return
+	 *         <ul>
+	 *         <li>true: se inscribe el integrante correctamente</li>
+	 *         <li>false: no se inscribe el integrante</li>
+	 *         </ul>
+	 */
 	public boolean inscribirIntegrante(Integrante e) {
 		boolean added = false;
 		boolean isOk = false;
@@ -147,6 +158,16 @@ public class COAC {
 		return added;
 	}
 
+	/**
+	 * método para eliminar a un integrante
+	 * 
+	 * @param a <i> objeto del integrante </i>
+	 * @return
+	 *         <ul>
+	 *         <li>true: se elimina al integrante</li>
+	 *         <li>false: no se elimina al integrante</li>
+	 *         </ul>
+	 */
 	public boolean eliminarIntegrante(Integrante e) {
 		boolean deleted = false;
 		for (int i = 0; i < integrantes.length; i++) {

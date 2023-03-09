@@ -77,7 +77,7 @@ public abstract class AgrupacionOficial extends Agrupacion {
 	/**
 	 * método para eliminar un integrante
 	 * 
-	 * @param i <i>objerto del integrante</i>
+	 * @param i <i>objeto del integrante</i>
 	 * @return
 	 *         <ul>
 	 *         <li>true: se elimina el integrante</li>
