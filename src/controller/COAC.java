@@ -5,18 +5,47 @@ import java.util.Iterator;
 
 import model.*;
 
+/**
+ * <h2>Clase COAC, desde donde se controla y gestiona los concursos oficiales de
+ * las agrupaciones carnavalescas</h2>
+ * 
+ * @author laura
+ * @since 09/03/2023
+ */
+
 public class COAC {
 
+	/**
+	 * atributo agrupaciones de tipo Agrupacion (array)
+	 */
 	private Agrupacion[] agrupaciones;
+	/**
+	 * atributo integrante de tipo Integrante (array)
+	 */
 	private Integrante[] integrantes;
 
+	/**
+	 * numero máximo de agrupaciones por defecto
+	 */
 	private final static int AGRUPACIONESPORDEFECTO = 20;
+	/**
+	 * numero máximo de integrantes por defecto
+	 */
 	private final static int INTEGRANTESPORDEFECTO = 20;
 
+	/**
+	 * metodo constructor por defecto
+	 */
 	public COAC() {
 		this(AGRUPACIONESPORDEFECTO);
 	}
 
+	/**
+	 * Constructor con un parámetro crea objetos COAC, con el tamaño máximo de la
+	 * agrupacion y los integrantes por defecto
+	 * 
+	 * @param tamaño <i>tamaño de las agrupaciones</i>
+	 */
 	public COAC(int tamaño) {
 		agrupaciones = new Agrupacion[tamaño];
 		integrantes = new Integrante[INTEGRANTESPORDEFECTO];
@@ -125,62 +154,62 @@ public class COAC {
 	public void ordenar_por_autor_musica_letra() {
 		Arrays.sort(agrupaciones, new Sort_Musica_Letra());
 	}
-	
+
 	public static int numTotalAgrupacionOficial(Agrupacion[] agrupaciones) {
-		int cont = 0; 
+		int cont = 0;
 		for (int i = 0; i < agrupaciones.length; i++) {
-			if(agrupaciones[i] instanceof AgrupacionOficial) {
-				cont ++; 
+			if (agrupaciones[i] instanceof AgrupacionOficial) {
+				cont++;
 			}
 		}
 		return cont;
 	}
-	
+
 	public static int numTotalChirigota(Agrupacion[] agrupaciones) {
-		int cont = 0; 
+		int cont = 0;
 		for (int i = 0; i < agrupaciones.length; i++) {
-			if(agrupaciones[i] instanceof Chirigota) {
-				cont ++; 
+			if (agrupaciones[i] instanceof Chirigota) {
+				cont++;
 			}
 		}
 		return cont;
 	}
-	
+
 	public static int numTotalComparsa(Agrupacion[] agrupaciones) {
-		int cont = 0; 
+		int cont = 0;
 		for (int i = 0; i < agrupaciones.length; i++) {
-			if(agrupaciones[i] instanceof Comparsa) {
-				cont ++; 
+			if (agrupaciones[i] instanceof Comparsa) {
+				cont++;
 			}
 		}
 		return cont;
 	}
-	
+
 	public static int numTotalCoro(Agrupacion[] agrupaciones) {
-		int cont = 0; 
+		int cont = 0;
 		for (int i = 0; i < agrupaciones.length; i++) {
-			if(agrupaciones[i] instanceof Coro) {
-				cont ++; 
+			if (agrupaciones[i] instanceof Coro) {
+				cont++;
 			}
 		}
 		return cont;
 	}
-	
+
 	public static int numTotalCuarteto(Agrupacion[] agrupaciones) {
-		int cont = 0; 
+		int cont = 0;
 		for (int i = 0; i < agrupaciones.length; i++) {
-			if(agrupaciones[i] instanceof Cuarteto) {
-				cont ++; 
+			if (agrupaciones[i] instanceof Cuarteto) {
+				cont++;
 			}
 		}
 		return cont;
 	}
-	
+
 	public static int numTotalRomancero(Agrupacion[] agrupaciones) {
-		int cont = 0; 
+		int cont = 0;
 		for (int i = 0; i < agrupaciones.length; i++) {
-			if(agrupaciones[i] instanceof Romancero) {
-				cont ++; 
+			if (agrupaciones[i] instanceof Romancero) {
+				cont++;
 			}
 		}
 		return cont;
