@@ -181,22 +181,39 @@ public class COAC {
 		return deleted;
 	}
 
+	/**
+	 * método que ordena por nombre
+	 */
 	public void ordenar_por_nombre() {
 		Arrays.sort(agrupaciones, new Sort_Nombre());
 	}
 
+	/**
+	 * método que ordena por puntos
+	 */
 	public void ordenar_por_puntos() {
 		Arrays.sort(agrupaciones, new Sort_Puntos());
 	}
 
+	/**
+	 * método que ordena por nombre del autor
+	 */
 	public void ordenar_por_autor() {
 		Arrays.sort(agrupaciones, new Sort_Autor());
 	}
 
+	/**
+	 * metodos que ordena por el autor de la musica o el autor de la letra
+	 */
 	public void ordenar_por_autor_musica_letra() {
 		Arrays.sort(agrupaciones, new Sort_Musica_Letra());
 	}
 
+	/**
+	 * método que dice el número total de las agrupaciones oficiales
+	 * @param agrupaciones <i>objeto de las agrupaciones (array)</i>
+	 * @return contador del número total calculado
+	 */
 	public static int numTotalAgrupacionOficial(Agrupacion[] agrupaciones) {
 		int cont = 0;
 		for (int i = 0; i < agrupaciones.length; i++) {
@@ -207,6 +224,11 @@ public class COAC {
 		return cont;
 	}
 
+	/**
+	 * método que dice el número total de las chirigotas
+	 * @param agrupaciones <i>objeto de las agrupaciones (array)</i>
+	 * @return contador del número total calculado
+	 */
 	public static int numTotalChirigota(Agrupacion[] agrupaciones) {
 		int cont = 0;
 		for (int i = 0; i < agrupaciones.length; i++) {
@@ -217,6 +239,11 @@ public class COAC {
 		return cont;
 	}
 
+	/**
+	 * método que dice el número total de la Comparsa
+	 * @param agrupaciones <i>objeto de las agrupaciones (array)</i>
+	 * @return contador del número total calculado
+	 */
 	public static int numTotalComparsa(Agrupacion[] agrupaciones) {
 		int cont = 0;
 		for (int i = 0; i < agrupaciones.length; i++) {
@@ -227,6 +254,11 @@ public class COAC {
 		return cont;
 	}
 
+	/**
+	 * método que dice el número total del Coro 
+	 * @param agrupaciones <i>objeto de las agrupaciones (array)</i>
+	 * @return contador del número total calculado
+	 */
 	public static int numTotalCoro(Agrupacion[] agrupaciones) {
 		int cont = 0;
 		for (int i = 0; i < agrupaciones.length; i++) {
@@ -237,6 +269,11 @@ public class COAC {
 		return cont;
 	}
 
+	/**
+	 * método que dice el número total del cuarteto
+	 * @param agrupaciones <i>objeto de las agrupaciones (array)</i>
+	 * @return contador del número total calculado 
+	 */
 	public static int numTotalCuarteto(Agrupacion[] agrupaciones) {
 		int cont = 0;
 		for (int i = 0; i < agrupaciones.length; i++) {
@@ -247,6 +284,11 @@ public class COAC {
 		return cont;
 	}
 
+	/**
+	 * método que dice el número total del cuarteto
+	 * @param agrupaciones <i>objeto de las agrupaciones (array)</i>
+	 * @return contador del número total calculado
+	 */
 	public static int numTotalRomancero(Agrupacion[] agrupaciones) {
 		int cont = 0;
 		for (int i = 0; i < agrupaciones.length; i++) {
@@ -256,7 +298,12 @@ public class COAC {
 		}
 		return cont;
 	}
-
+	/**
+	 * metodo para devolver una cadena de texto de de los objetos de la clase
+	 * COAC
+	 * 
+	 * @return objetos de COAC
+	 */
 	@Override
 	public String toString() {
 		return "agrupaciones = " + Arrays.toString(agrupaciones) + ", integrantes= " + Arrays.toString(integrantes);
