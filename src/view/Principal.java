@@ -83,40 +83,8 @@ public class Principal {
 		Util.Escribir(" 13. Ordenar por el autor.");
 		Util.Escribir(" 14. Ordenar por el autor de música/letra.");
 	}
-	static void mostrarMenuParticipantes() {
-		Util.Escribir("\n");
-		Util.Escribir("┌──────────────────────────┐");
-		Util.Escribir("│ GESTION DE PARTICIPANTES │");
-		Util.Escribir("└──────────────────────────┘");
-		Util.Escribir("  1. Añadir un participante.");
-		Util.Escribir("  2. Eliminar un participante.");
-		Util.Escribir("  3. Editar un participante.");
-		Util.Escribir("  4. Listar todos los particpantes.");
-		Util.Escribir("  5. Ordenar por nombre.");
-	}
 	
-	static void mostrarMenuConcurso() {
-		Util.Escribir("\n");
-		Util.Escribir("┌──────────────────────┐");
-		Util.Escribir("│ GESTION DEL CONCURSO │");
-		Util.Escribir("└──────────────────────┘");
-		Util.Escribir("Concurso:");
-		Util.Escribir("  1. Va camino del Falla.");
-		Util.Escribir("  2. Hacen el Tipo.");
-		Util.Escribir("  3. Canta la Presentación.");
-		Util.Escribir("  4. Asignar puntos.");
-		Util.Escribir("Listado de agrupaciones participantes:");
-		Util.Escribir("  5. Listar todos.");
-		Util.Escribir("  6. Listar Chirigotas.");
-		Util.Escribir("  7. Listar Coros.");
-		Util.Escribir("  8. Listar Cuartetos.");
-		Util.Escribir("  9. Listar Comparsas.");
-		Util.Escribir("Ordenación del listado:");
-		Util.Escribir(" 10. Ordenar por puntos.");
-		Util.Escribir(" 11. Ordenar por el nombre.");
-		Util.Escribir(" 12. Ordenar por el autor.");
-		Util.Escribir(" 13. Ordenar por autor de música/letra.");
-	}
+	
 	
 	private static void mostrarmenuTipoAgrupaciones() {
 		Util.Escribir("\n");
@@ -169,7 +137,7 @@ public class Principal {
 	public static void opcionConcurso() {
 		int opc;
 		do {
-			mostrarMenuConcurso();
+			GestionConcurso.mostrarMenuConcurso();
 			opc = Util.LeerInteger("Opción [0 - Volver] : ");
 			switch (opc) {
 			case 1 -> GestionConcurso.hacerTipo();
@@ -272,7 +240,7 @@ public class Principal {
 	private static Object opcionParticipantes() {
 		int opc ; 
 		do {
-			mostrarMenuParticipantes();
+			GestionParticipante.mostrarMenuParticipantes();
 			opc = Util.LeerInteger("Opción [0 - Volver] : ");
 			switch (opc) {
 			case 1 -> GestionParticipante.addIntegrante();

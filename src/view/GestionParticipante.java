@@ -4,8 +4,19 @@ import model.Integrante;
 
 public class GestionParticipante {
 
+	public static void mostrarMenuParticipantes() {
+		Util.Escribir("\n");
+		Util.Escribir("┌──────────────────────────┐");
+		Util.Escribir("│ GESTION DE PARTICIPANTES │");
+		Util.Escribir("└──────────────────────────┘");
+		Util.Escribir("  1. Añadir un participante.");
+		Util.Escribir("  2. Eliminar un participante.");
+		Util.Escribir("  3. Editar un participante.");
+		Util.Escribir("  4. Listar todos los particpantes.");
+		Util.Escribir("  5. Ordenar por nombre.");
+	}
 	
-	static Object editarIntegrante() {
+	public static Object editarIntegrante() {
 		int opc;
 		do {
 			listarIntegrantes();
@@ -17,7 +28,7 @@ public class GestionParticipante {
 		return null;
 	}
 
-	static Object delIntegrante() {
+	public static Object delIntegrante() {
 		int opc;
 		do {
 			listarIntegrantes();
@@ -28,7 +39,7 @@ public class GestionParticipante {
 		return null;
 	}
 
-	static void listarIntegrantes() {
+	public static void listarIntegrantes() {
 		Integrante [] aux = Principal.coac.getIntegrantes();
 		System.out.println(aux);		
 	}
@@ -43,7 +54,7 @@ public class GestionParticipante {
 		} while (opc != 0);
 	}
 
-	private static void datosIntegrantes(Integrante i) {
+	public static void datosIntegrantes(Integrante i) {
 		String pregunta; 
 		String respuesta; 
 		int resultado; 

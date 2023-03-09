@@ -19,7 +19,7 @@ public class GestionConcurso {
 	/**
 	 * método donde se muestra el menú del concurso
 	 */
-	static void mostrarMenuConcurso() {
+	public static void mostrarMenuConcurso() {
 		Util.Escribir("\n");
 		Util.Escribir("┌──────────────────────┐");
 		Util.Escribir("│ GESTION DEL CONCURSO │");
@@ -129,7 +129,7 @@ public class GestionConcurso {
 	 * 
 	 * @param a <i>objeto de la agrupación oficial</i>
 	 */
-	static void datoOficial(AgrupacionOficial a) {
+	public static void datoOficial(AgrupacionOficial a) {
 		String pregunta;
 		int respuesta;
 
