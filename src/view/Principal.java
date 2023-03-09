@@ -126,7 +126,7 @@ public class Principal {
 			mostrarMenuPrincipal();
 			opc = Util.LeerInteger("Opción [0 - Salir] : ");
 			switch (opc) {
-			case 1 -> opcionParticipantes();
+			case 1 -> gestionParticipantes();
 			case 2 -> addAgrupacion();
 			case 3 -> delAgrupacion();
 			case 4 -> gestionConcurso();
@@ -215,7 +215,8 @@ public class Principal {
 	}
 
 	/**
-	 * método para añadir una agrupación, eligiendo las opciones disponibles
+	 * método para añadir una agrupación, eligiendo las opciones disponibles y
+	 * aplicando los metodos para añadir
 	 */
 	static void addAgrupacion() {
 		int opc;
@@ -236,31 +237,51 @@ public class Principal {
 		} while (opc != 0);
 	}
 
+	/**
+	 * método para añadir un romancero
+	 */
 	private static void addRomancero() {
 		Romancero r = new Romancero();
 		datosAgrupaciones(r);
 	}
 
+	/**
+	 * método para añadir un cuarteto
+	 */
 	private static void addcuarteto() {
 		Cuarteto cuar = new Cuarteto();
 		datosAgrupaciones(cuar);
 	}
 
+	/**
+	 * método para añadir una chirigota
+	 */
 	private static void addChirigota() {
 		Chirigota ch = new Chirigota();
 		datosAgrupaciones(ch);
 	}
 
+	/**
+	 * método para añadir una comparsa
+	 */
 	private static void addComparsa() {
 		Comparsa comp = new Comparsa();
 		datosAgrupaciones(comp);
 	}
 
+	/**
+	 * método para añadir un coro
+	 */
 	private static void addCoro() {
 		Coro coro = new Coro();
 		datosAgrupaciones(coro);
 	}
 
+	/**
+	 * método para modificar los datos de una agrupación
+	 * 
+	 * @param a <i> objeto de la agrupación</i>
+	 */
 	private static void datosAgrupaciones(Agrupacion a) {
 		String pregunta;
 		String respuesta;
@@ -292,7 +313,11 @@ public class Principal {
 
 	}
 
-	private static Object opcionParticipantes() {
+	/**
+	 * gestion de los participantes, se muestra el menu y se van mostrando las
+	 * opciones escogidas
+	 */
+	private static Object gestionParticipantes() {
 		int opc;
 		do {
 			GestionParticipante.mostrarMenuParticipantes();
@@ -308,10 +333,22 @@ public class Principal {
 		return null;
 	}
 
+	/**
+	 * método para finalizar el programa
+	 */
 	private static void finDelPrograma() {
 		Util.Escribir("Fin del programa");
 	}
 
+	/**
+	 * método que le pregunta al usuario si desea continuar
+	 * 
+	 * @return
+	 *         <ul>
+	 *         <li>true: el usuario desea continuar</li>
+	 *         <li>false: el usuario no desea continuar</li>
+	 *         </ul>
+	 */
 	public static boolean preguntarMas() {
 		boolean isOk = true;
 		String resp = Util.LeerString("\n¿Desea continuar? (S/N): ");
