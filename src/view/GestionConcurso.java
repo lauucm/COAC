@@ -8,7 +8,7 @@ import model.Coro;
 import model.Cuarteto;
 
 /**
- * <h2>Clase gestión del concurso, se muestra el menu del concusro y
+ * <h2>Clase gestión del concurso, se muestra el menu del concusro y sus
  * correspondidos métodos</h2>
  * 
  * @author laura
