@@ -67,6 +67,17 @@ public class COAC {
 		this.integrantes = integrantes;
 	}
 
+	/**
+	 * metodo para inscribir a una agrupación, donde primeramente se comprueba si no
+	 * esta ya incluida
+	 * 
+	 * @param a <i></i>objeto de la agrupación
+	 * @return
+	 *         <ul>
+	 *         <li>true: se inscribe la agrupación correctamente</li>
+	 *         <li>false: no se inscribe la agrupación</li>
+	 *         </ul>
+	 */
 	public boolean inscribirAgrupacion(Agrupacion a) {
 		boolean added = false;
 		boolean isOk = false;
@@ -90,6 +101,16 @@ public class COAC {
 		return added;
 	}
 
+	/**
+	 * método para eliminar una agrupación
+	 * 
+	 * @param a <i> objeto de la agrupación </i>
+	 * @return
+	 *         <ul>
+	 *         <li>true: se elimina la agrupación</li>
+	 *         <li>false: no se elimina la agrupación</li>
+	 *         </ul>
+	 */
 	public boolean eliminarAgrupacion(Agrupacion a) {
 		boolean deleted = false;
 		for (int i = 0; i < agrupaciones.length; i++) {
