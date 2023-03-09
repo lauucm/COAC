@@ -147,16 +147,25 @@ public class GestionConcurso {
 		listarOficiales();
 	}
 
+	/**
+	 * método para ordenar por nombre de la agrupación y listarlo
+	 */
 	public static void ordenarNombre() {
 		Principal.coac.ordenar_por_nombre();
 		listarOficiales();
 	}
 
+	/**
+	 * método para ordenar por el autor de la agrupación y listarlo
+	 */
 	public static void ordenarAutor() {
 		Principal.coac.ordenar_por_autor();
 		listarOficiales();
 	}
 
+	/**
+	 * método para ordenar por el autor de la música o de la letra y listarlo
+	 */
 	public static void ordenarMusicaLetra() {
 		Principal.coac.ordenar_por_autor_musica_letra();
 		listarOficiales();
