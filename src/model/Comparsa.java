@@ -63,6 +63,18 @@ public class Comparsa extends AgrupacionOficial implements Callejera{
 	public String amoAescucha() {
 		return "Amo a escucha la comparsa" + super.getNombre();
 	}
+
+	/**
+	 * método para devolver una cadena de texto de los objetos de la clase Comparsa
+	 * y sus respectivas clases madres
+	 * 
+	 * @return objetos de esta clase y sus madres
+	 */
+	@Override
+	public String toString() {
+		return "Comparsa: empresa Atrezzo= " + empresaAtrezzo + super.toString(); 
+	}
+	
 	
 
 }
