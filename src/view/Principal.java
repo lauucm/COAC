@@ -172,15 +172,14 @@ public class Principal {
 			mostrarMenuConcurso();
 			opc = Util.LeerInteger("Opción [0 - Volver] : ");
 			switch (opc) {
-			case 1 -> GestionConcurso.caminitoFalla();
-			case 2 -> GestionConcurso.hacerTipo();
-			case 3 -> GestionConcurso.cantaPresentacion();
-			case 4 -> GestionConcurso.editarPuntos();
-			case 5 -> GestionConcurso.listarOficiales();
-			case 6 -> GestionConcurso.ordernarPunto();
-			case 7 -> GestionConcurso.ordenarNombre();
-			case 8 -> GestionConcurso.ordenarAutor();
-			case 9 -> GestionConcurso.ordenarMusicaLetra();
+			case 1 -> GestionConcurso.hacerTipo();
+			case 2 -> GestionConcurso.cantaPresentacion();
+			case 3 -> GestionConcurso.editarPuntos();
+			case 4 -> GestionConcurso.listarOficiales();
+			case 5 -> GestionConcurso.ordernarPunto();
+			case 6 -> GestionConcurso.ordenarNombre();
+			case 7 -> GestionConcurso.ordenarAutor();
+			case 8 -> GestionConcurso.ordenarMusicaLetra();
 			}
 		} while (opc != 0);
 	}

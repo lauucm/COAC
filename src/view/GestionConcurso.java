@@ -1,6 +1,5 @@
 package view;
 
-import controller.COAC;
 import model.Agrupacion;
 import model.AgrupacionOficial;
 import model.Chirigota;
@@ -8,8 +7,18 @@ import model.Comparsa;
 import model.Coro;
 import model.Cuarteto;
 
+/**
+ * <h2>Clase gestión del concurso, se muestra el menu del concusro y
+ * correspondidos métodos</h2>
+ * 
+ * @author laura
+ * @since 09/03/2023
+ */
 public class GestionConcurso {
 
+	/**
+	 * método donde se muestra el menú del concurso
+	 */
 	static void mostrarMenuConcurso() {
 		Util.Escribir("\n");
 		Util.Escribir("┌──────────────────────┐");
@@ -32,99 +41,107 @@ public class GestionConcurso {
 		Util.Escribir(" 12. Ordenar por el autor.");
 		Util.Escribir(" 13. Ordenar por autor de música/letra.");
 	}
-	
-	static void caminitoFalla() {
-		int opc; 
-		String txt; 
-		Agrupacion [] aux = Principal.coac.getAgrupaciones();
-		do {
-			listarOficiales();
-			opc = Util.LeerInteger("\n¿Cuál quieres?: ");
-			opc--;
 
-			switch(aux[opc].getClass().getCanonicalName()) {
-			case "Chirigota" -> txt =  ((Chirigota) aux[opc]).caminitoDelFalla();
-			case "Comparsa" -> txt = ((Comparsa) aux[opc]).caminitoDelFalla();
-			case "Coro" -> txt = ((Coro) aux[opc]).caminitoDelFalla();
-			case "Cuarteto" -> txt= ((Cuarteto) aux[opc]).caminitoDelFalla();
-			default -> txt = "";
-			}
-			
-			System.out.println("\n" + txt);
-			if(!Principal.preguntarMas()) {opc = 0;}
-		} while (opc != 0);
-	}
+	/**
+	 * método que lista las agrupaciones oficiales
+	 */
 
 	public static void listarOficiales() {
-		Agrupacion [] aux = Principal.coac.getAgrupaciones();
+		Agrupacion[] aux = Principal.coac.getAgrupaciones();
 		System.out.println(aux);
 	}
 
+	/**
+	 * método para escoger el tipo de agrupación y se muestra por pantalla el método
+	 * hacerTipo de este
+	 */
 	public static void hacerTipo() {
 		int opc;
 		String txt;
-		Agrupacion [] aux = Principal.coac.getAgrupaciones();
+		Agrupacion[] aux = Principal.coac.getAgrupaciones();
 		do {
 			listarOficiales();
 			opc = Util.LeerInteger("\n¿Cuál quieres?: ");
 			opc--;
-			
-			switch(aux[opc].getClass().getCanonicalName()) {
-			case "Chirigota" -> txt =((Chirigota) aux[opc]).hacerTipo();
+
+			switch (aux[opc].getClass().getCanonicalName()) {
+			case "Chirigota" -> txt = ((Chirigota) aux[opc]).hacerTipo();
 			case "Comparsa" -> txt = ((Comparsa) aux[opc]).hacerTipo();
 			case "Coro" -> txt = ((Coro) aux[opc]).hacerTipo();
 			case "Cuarteto" -> txt = ((Cuarteto) aux[opc]).hacerTipo();
 			default -> txt = "";
 			}
-			
+
 			System.out.println("\n" + txt);
-			if(!Principal.preguntarMas()) {opc = 0;}
+			if (!Principal.preguntarMas()) {
+				opc = 0;
+			}
 		} while (opc != 0);
 	}
 
+	/**
+	 * método para escoger el tipo de agrupación y se muestra por pantalla el método
+	 * cantaPresentacion de este
+	 */
 	public static void cantaPresentacion() {
 		int opc;
 		String txt;
-		Agrupacion [] aux = Principal.coac.getAgrupaciones();
+		Agrupacion[] aux = Principal.coac.getAgrupaciones();
 		do {
 			listarOficiales();
 			opc = Util.LeerInteger("\n¿Cuál quieres?: ");
 			opc--;
-			
-			switch(aux[opc].getClass().getCanonicalName()) {
+
+			switch (aux[opc].getClass().getCanonicalName()) {
 			case "Chirigota" -> txt = ((Chirigota) aux[opc]).cantarPresentacion();
 			case "Comparsa" -> txt = ((Comparsa) aux[opc]).cantarPresentacion();
 			case "Coro" -> txt = ((Coro) aux[opc]).cantarPresentacion();
 			case "Cuarteto" -> txt = ((Cuarteto) aux[opc]).cantarPresentacion();
 			default -> txt = "";
 			}
-		
+
 			System.out.println("\n" + txt);
-			if(!Principal.preguntarMas()) {opc = 0;}
+			if (!Principal.preguntarMas()) {
+				opc = 0;
+			}
 		} while (opc != 0);
 	}
 
-	public static void  editarPuntos() {
+	/**
+	 * método para escoger una agrupación y se muestra por pantalla sus puntos
+	 */
+	public static void editarPuntos() {
 		int opc;
-		Agrupacion [] aux = Principal.coac.getAgrupaciones();
+		Agrupacion[] aux = Principal.coac.getAgrupaciones();
 		do {
 			System.out.println();
 			listarOficiales();
 			opc = Util.LeerInteger("¿Cuál editas?: ");
-			datoOficial((AgrupacionOficial)(aux[opc - 1]));
-			if(!Principal.preguntarMas()) {opc = 0;}
+			datoOficial((AgrupacionOficial) (aux[opc - 1]));
+			if (!Principal.preguntarMas()) {
+				opc = 0;
+			}
 		} while (opc != 0);
 	}
-	
+
+	/**
+	 * método para editar los puntos de una agrupación oficial
+	 * 
+	 * @param a <i>objeto de la agrupación oficial</i>
+	 */
 	static void datoOficial(AgrupacionOficial a) {
 		String pregunta;
 		int respuesta;
-		
-		pregunta = "Puntos obtenidos" + ( (a.getPuntos() == null) ? ": " : "[" + a.getPuntos() + "]: ");
+
+		pregunta = "Puntos obtenidos" + ((a.getPuntos() == null) ? ": " : "[" + a.getPuntos() + "]: ");
 		respuesta = Util.LeerInteger(pregunta);
-		if(respuesta != 0) a.setPuntos(respuesta);
+		if (respuesta != 0)
+			a.setPuntos(respuesta);
 	}
 
+	/**
+	 * método para ordenar por puntos y listarlo
+	 */
 	public static void ordernarPunto() {
 		Principal.coac.ordenar_por_puntos();
 		listarOficiales();
@@ -145,5 +162,4 @@ public class GestionConcurso {
 		listarOficiales();
 	}
 
-	
 }
