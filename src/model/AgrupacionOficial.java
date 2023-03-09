@@ -1,7 +1,7 @@
 package model;
 
 import java.util.Arrays;
-import java.util.Iterator;
+
 
 /**
  * <h2>Clase Agrupación oficial, heredera de la clase agrupación</h2>
